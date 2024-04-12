@@ -3,6 +3,8 @@
 - This is the third project of the Software Engineering program at TripleTen. It was created using HTML and CSS, referencing Figma for stylings
 - [Link to the Project](https://github.com/taylorrubbert/se_project_aroundtheus)
 
+* [Link to video review of project](https://drive.google.com/file/d/1bQ_n75s-2yvn-9vtjqGBtbBlD1vf8Bi3/view?usp=sharing)
+
 ## Project features
 
 - Semantic HTML5
