@@ -1,7 +1,7 @@
 # Sprint 3: Around the U.S.
 
-_This is the third project of the Software Engineering program at TripleTen. It was created using HTML and CSS, referencing Figma for stylings
-_[Link to the Project](https://github.com/taylorrubbert/se_project_aroundtheus)
+- This is the third project of the Software Engineering program at TripleTen. It was created using HTML and CSS, referencing Figma for stylings
+- [Link to the Project](https://github.com/taylorrubbert/se_project_aroundtheus)
 
 ## Project features
 
