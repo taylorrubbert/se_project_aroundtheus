@@ -19,6 +19,9 @@
     "subtitle . add";
   grid-template-columns: minmax(auto, 373px) auto;
   grid-gap: 9px 17px;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
 }
 
 .profile__title {
@@ -29,7 +32,8 @@
   line-height: 1.2;
   grid-area: title;
   margin: 0;
-  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .profile__subtitle {
@@ -40,14 +44,17 @@
   line-height: 1.2;
   grid-area: subtitle;
   margin: 0;
-  padding: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__edit-button {
   background: transparent url(../images/edit-default.svg);
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 1px;
+  border: 1px;
+  border-style: solid;
   border-color: white;
   height: 24px;
   width: 24px;
@@ -65,7 +72,8 @@
   background: transparent url(../images/add-default.svg);
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 2px;
+  border: 2px;
+  border-style: solid;
   border-color: white;
   height: 50px;
   width: 150px;
@@ -80,10 +88,6 @@
 }
 
 @media screen and (max-width: 880px) {
-  .logo {
-    margin-left: 27px;
-  }
-
   .profile {
     flex-direction: column;
     justify-content: center;
@@ -91,8 +95,6 @@
   }
 
   .profile__image {
-    height: 120px;
-    width: 120px;
     margin-bottom: 26.25px;
     margin-left: auto;
     margin-right: auto;
@@ -109,16 +111,11 @@
 
   .profile__title {
     text-align: center;
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 500;
     font-size: 33px;
-    line-height: 26.63px;
   }
 
   .profile__subtitle {
     text-align: center;
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 400px;
     font-size: 22px;
     line-height: 1.2;
     width: 100%;
@@ -131,20 +128,13 @@
 
   .profile__add-button {
     width: 260px;
-    height: 50px;
     justify-content: center;
     margin: 36px 0 0 0;
     padding: 0;
-    border-radius: 2px;
-    color: white;
   }
 }
 
 @media screen and (max-width: 620px) {
-  .logo {
-    margin-left: 27px;
-  }
-
   .profile {
     flex-direction: column;
     justify-content: center;
@@ -153,8 +143,6 @@
 
   .profile__image {
     margin-bottom: 26.25px;
-    width: 120px;
-    height: 120px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -170,18 +158,12 @@
 
   .profile__title {
     text-align: center;
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 500;
     font-size: 22px;
-    line-height: 1.2;
   }
 
   .profile__subtitle {
     text-align: center;
-    font-family: "Inter", Arial, sans-serif;
-    font-weight: 400px;
     font-size: 14px;
-    line-height: 1.2;
     width: 100%;
   }
 
@@ -193,11 +175,8 @@
 
   .profile__add-button {
     width: 282px;
-    height: 50px;
     justify-content: center;
     margin: 36px 0 0 0;
     padding: 0;
-    border-radius: 2px;
-    color: white;
   }
 }

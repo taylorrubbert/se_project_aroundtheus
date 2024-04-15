@@ -8,5 +8,23 @@
   font-family: "Inter", Arial, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 21.78px;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 880px) {
+  .footer {
+    margin: 48px 19px 36px;
+    padding: 0;
+    max-width: 580px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .footer {
+    max-width: 282px;
+    margin: 48px 19px 36px;
+    font-size: 14px;
+  }
 }
