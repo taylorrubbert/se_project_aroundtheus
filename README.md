@@ -4,6 +4,7 @@
 - [Link to the Project](https://github.com/taylorrubbert/se_project_aroundtheus)
 
 * [Link to video review of project](https://drive.google.com/file/d/1bQ_n75s-2yvn-9vtjqGBtbBlD1vf8Bi3/view?usp=sharing)
+* [GitHub Pages](https://taylorrubbert.github.io/se_project_aroundtheus/)
 
 ## Project features
 
