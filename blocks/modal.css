@@ -1,0 +1,117 @@
+.modal {
+  display: none;
+}
+
+.modal__open {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 19px;
+}
+
+.modal__container {
+  background-color: #fff;
+  margin: auto;
+  padding: 36px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal__edit {
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.2;
+  color: #000;
+}
+
+.modal__close {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: calc(100% + 5px);
+  background-image: url(../images/close-icon.svg);
+  height: 40px;
+  width: 40px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.modal__title {
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0 0 54px;
+}
+
+.modal__input {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 400;
+  font-size: 14px;
+  border-bottom: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 30px;
+  padding-bottom: 13px;
+  width: 100%;
+}
+
+.modal__input:last-of-type {
+  margin-bottom: 48px;
+}
+
+.modal__save {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  height: 50px;
+  width: 360px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 880px) {
+  .modal__close {
+    height: 35px;
+    width: 35px;
+  }
+
+  .modal__title {
+    margin: 0 0 60px;
+  }
+
+  .modal__save {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .modal__close {
+    height: 26px;
+    width: 26px;
+    bottom: calc(100% + 20px);
+    left: calc(100% - 26px);
+  }
+
+  .modal__title {
+    margin: 0 0 75px;
+  }
+
+  .modal__save {
+    height: 46px;
+    width: 238px;
+  }
+
+  .modal__input:last-of-type {
+    margin-bottom: 45px;
+  }
+}
