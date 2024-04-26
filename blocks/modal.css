@@ -10,7 +10,7 @@
   position: fixed;
 }
 
-.modal__opened {
+.modal_opened {
   display: flex;
 }
 
