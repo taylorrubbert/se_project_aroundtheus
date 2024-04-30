@@ -37,7 +37,7 @@
   text-overflow: ellipsis;
 }
 
-.profile__subtitle {
+.profile__description {
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -116,7 +116,7 @@
     font-size: 33px;
   }
 
-  .profile__subtitle {
+  .profile__description {
     text-align: center;
     font-size: 22px;
     line-height: 1.2;
@@ -141,7 +141,7 @@
     font-size: 22px;
   }
 
-  .profile__subtitle {
+  .profile__description {
     font-size: 14px;
   }
 
