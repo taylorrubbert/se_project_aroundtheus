@@ -37,70 +37,7 @@
         <button class="profile__add-button" type="button"></button>
       </section>
       <section class="card page__section">
-        <ul class="card__list">
-          <li class="card__content">
-            <img
-              src="./images/yosemite.jpg"
-              alt="Yosemite Valley"
-              class="card__image"
-            />
-            <div class="card__description">
-              <h2 class="card__title">Yosemite Valley</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card__content">
-            <img
-              src="./images/roosevelt-national-park.jpg"
-              alt="Theodore Roosevelt National Park"
-              class="card__image"
-            />
-            <div class="card__description">
-              <h2 class="card__title">Theodore Roosevelt National Park</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card__content">
-            <img
-              src="./images/redwood.jpg"
-              alt="Redwood National Forest"
-              class="card__image"
-            />
-            <div class="card__description">
-              <h2 class="card__title">Redwood National Forest</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card__content">
-            <img src="./images/acadia.jpg" alt="Acadia" class="card__image" />
-            <div class="card__description">
-              <h2 class="card__title">Acadia</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card__content">
-            <img
-              src="./images/lake-clark.jpg"
-              alt="Lake Clark"
-              class="card__image"
-            />
-            <div class="card__description">
-              <h2 class="card__title">Lake Clark</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-          <li class="card__content">
-            <img
-              src="./images/everglades.jpg"
-              alt="Everglades"
-              class="card__image"
-            />
-            <div class="card__description">
-              <h2 class="card__title">Everglades</h2>
-              <button class="card__like-button" type="button"></button>
-            </div>
-          </li>
-        </ul>
+        <ul class="card__list"></ul>
       </section>
     </main>
     <footer class="footer page__section">
@@ -127,6 +64,15 @@
         </form>
       </div>
     </div>
+    <template id="card-template">
+      <li class="card__content">
+        <img src="" alt="" class="card__image" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
