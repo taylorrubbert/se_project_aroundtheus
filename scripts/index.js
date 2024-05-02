@@ -4,24 +4,24 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
   },
   {
-    name: "Theodore Roosevelt National Park",
-    link: "https://unsplash.com/photos/green-grass-field-and-brown-mountains-during-daytime-oz0b8WpWRuY",
+    name: "Lake Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
   },
   {
-    name: "Redwood National Forest",
-    link: "https://unsplash.com/photos/landscape-photography-of-forest-3tW2GR0KAd8",
+    name: "Bald Mountains",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
   },
   {
-    name: "Acadia",
-    link: "https://unsplash.com/photos/green-trees-on-rocky-shore-during-daytime-QaIXVqqk3H0",
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
   },
   {
-    name: "Lake Clark",
-    link: "https://unsplash.com/photos/green-tent-on-rocky-shore-near-mountain-under-cloudy-sky-during-daytime-7SuSlm33MiY",
+    name: "Vanoise National Park",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
   },
   {
-    name: "Everglades",
-    link: "https://unsplash.com/photos/a-large-body-of-water-filled-with-lots-of-green-plants-iac26tSGcJ4",
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
 
@@ -41,7 +41,7 @@ const profileDescriptionInput = document.querySelector(
 const profileEditForm = profileEditModal.querySelector(".modal__edit");
 const cardListElement = document.querySelector(".card__list");
 const cardTemplate =
-  document.querySelector("#card-template").textContent.firstElementChild;
+  document.querySelector("#card-template").content.firstElementChild;
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -63,8 +63,8 @@ function getCardElement(cardData) {
 /* -------------------------------------------------------------------------- */
 /*                               Event Handlers                               */
 /* -------------------------------------------------------------------------- */
-function handleProfileEditSubmit(event) {
-  event.preventDefault();
+function handleProfileEditSubmit(e) {
+  e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
   closeEditModal();
