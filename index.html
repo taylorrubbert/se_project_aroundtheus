@@ -43,25 +43,52 @@
     <footer class="footer page__section">
       <h2 class="footer__copyright">&copy; 2024 Around the U.S.</h2>
     </footer>
+
+    <!--Edit Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button type="button" class="modal__close"></button>
-        <form class="modal__edit">
+        <form class="modal__form" id="edit-profile-form">
           <h2 class="modal__title">Edit Profile</h2>
           <input
             type="text"
-            name="title"
+            name="name"
             placeholder="Name"
-            class="modal__input"
+            class="modal__input modal__input_type_name"
             id="profile-title-input"
             required
           />
           <input
             type="text"
             name="description"
-            placeholder="About"
-            class="modal__input"
+            placeholder="Description"
+            class="modal__input modal__input_type_description"
             id="profile-description-input"
+            required
+          />
+          <button type="submit" class="modal__save">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <!--Add Card Modal-->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close"></button>
+        <form class="modal__form" id="add-card-form">
+          <h2 class="modal__title">New Place</h2>
+          <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            class="modal__input modal__input_type_title"
+            required
+          />
+          <input
+            type="text"
+            name="url"
+            placeholder="Image URL"
+            class="modal__input modal__input_type_url"
             required
           />
           <button type="submit" class="modal__save">Save</button>
@@ -70,10 +97,14 @@
     </div>
     <template id="card-template">
       <li class="card__content">
-        <img src="" alt="" class="card__image" />
+        <img src="" alt="" class="card__image" id="card-image" />
         <div class="card__description">
-          <h2 class="card__title"></h2>
-          <button class="card__like-button" type="button"></button>
+          <h2 class="card__title" id="card-title"></h2>
+          <button
+            class="card__like-button"
+            type="button"
+            id="like-button"
+          ></button>
         </div>
       </li>
     </template>
