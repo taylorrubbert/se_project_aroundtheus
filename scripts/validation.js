@@ -54,33 +54,27 @@ function enableValidation(options) {
   });
 }
 
-function toggleButtonState(
-  inputElements,
-  submitButtonSelector,
-  { inactiveButtonClass }
-) {
+function toggleButtonState(inputElements, saveButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputElements)) {
-    disableButton();
+    saveButton.classList.add(inactiveButtonClass);
+    saveButton.disabled = true;
     return;
   }
-  enableButton();
-}
-
-function enableButton(options) {
-  saveButton.classList.remove(".modal__button_disabled");
+  saveButton.classList.remove(inactiveButtonClass);
   saveButton.disabled = false;
 }
-function disableButton(options) {
-  saveButton.classList.add(".modal__button_disabled");
-  saveButton.disabled = true;
-}
+
+/*function enableButton(saveButton, inactiveButtonClass, options) {}
+
+function disableButton(saveButton, inactiveButtonClass, options) {}*/
 
 const options = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal_input-error",
+  inputErrorClass: "modal__input-error",
   errorClass: "modal__error",
 };
+
 enableValidation(options);

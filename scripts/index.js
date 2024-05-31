@@ -162,10 +162,7 @@ previewImageCloseBtn.addEventListener("click", () =>
 //Close modal
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (e) => {
-    if (
-      e.target === modal ||
-      e.target.classList.contains("modal__close-button")
-    ) {
+    if (e.target === modal || e.target.classList.contains("modal__close")) {
       closeModal(modal);
     }
   });
