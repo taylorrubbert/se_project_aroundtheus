@@ -48,9 +48,8 @@
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button type="button" class="modal__close"></button>
-        <h2 class="modal__title modal__form">Edit Profile</h2>
+        <h2 class="modal__title">Edit Profile</h2>
         <form class="modal__form" id="edit-profile-form">
-          <label class="modal__label">
             <input
               type="text"
               name="name"
@@ -63,7 +62,6 @@
             />
             <span class="modal__error" id="profile-title-input-error"></span>
           </label>
-          <label class="modal__label">
             <input
               type="text"
               name="description"
@@ -79,7 +77,9 @@
               id="profile-description-input-error"
             ></span>
           </label>
-          <button type="submit" class="modal__save">Save</button>
+          <button type="submit" class="modal__save modal__button_disabled">
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -88,9 +88,8 @@
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
         <button type="button" class="modal__close"></button>
-        <h2 class="modal__title modal__form">New Place</h2>
+        <h2 class="modal__title">New Place</h2>
         <form class="modal__form" id="add-card-form">
-          <label class="modal__label">
             <input
               type="text"
               name="title"
@@ -103,7 +102,6 @@
             />
             <span class="modal__error" id="card-name-error"></span>
           </label>
-          <label class="modal__label">
             <input
               type="text"
               name="url"
@@ -117,7 +115,7 @@
           </label>
           <button
             type="submit"
-            class="modal__save modal__button_disabled modal__error_visible"
+            class="modal__save modal__button_disabled"
             disabled
           >
             Save
