@@ -1,4 +1,3 @@
-/*Validity and Input*/
 function showInputError(
   formElements,
   inputElements,
@@ -28,14 +27,14 @@ function checkInputValidity(formElements, inputElements, options) {
   hideInputError(formElements, inputElements, options);
 }
 
-function hasInvalidInput(inputList) {
-  return !inputList.every((inputElements) => inputElements.validity.valid);
+function hasInvalidInput(inputElements) {
+  return !inputElements.validity.valid;
 }
 
 function setEventListeners(formElements, options) {
-  const { inputSelector } = options;
+  const { inputSelector, submitButtonSelector } = options;
   const inputElements = [...formElements.querySelectorAll(inputSelector)];
-  const saveButton = formElements.querySelector(".modal__save");
+  const saveButton = formElements.querySelector(submitButtonSelector);
   inputElements.forEach((inputElements) => {
     inputElements.addEventListener("input", (event) => {
       checkInputValidity(formElements, inputElements, options);
@@ -54,7 +53,6 @@ function enableValidation(options) {
   });
 }
 
-/*Button Functions*/
 function disableButton() {
   saveButton.classList.remove(inactiveButtonClass);
   saveButton.disabled = false;
