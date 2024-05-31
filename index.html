@@ -70,7 +70,7 @@
               placeholder="Description"
               class="modal__input modal__input_type_description"
               id="profile-description-input"
-              maxlength="40"
+              maxlength="200"
               minlength="2"
               required
             />
@@ -97,8 +97,8 @@
               placeholder="Title"
               class="modal__input modal__input_type_title"
               id="card-name"
-              maxlength="200"
-              minlength="2"
+              maxlength="30"
+              minlength="1"
               required
             />
             <span class="modal__error" id="card-name-error"></span>
@@ -110,8 +110,7 @@
               placeholder="Image URL"
               class="modal__input modal__input_type_url"
               id="card-link"
-              maxlength="200"
-              minlength="2"
+              type="url"
               required
             />
             <span class="modal__error" id="card-link-error"></span>

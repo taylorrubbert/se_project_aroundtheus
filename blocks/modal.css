@@ -128,6 +128,7 @@
 }
 
 .modal__error_visible {
+  color: red;
 }
 
 .modal__button_disabled {

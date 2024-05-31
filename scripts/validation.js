@@ -34,7 +34,6 @@ function hasInvalidInput(inputElements) {
 function setEventListeners(formElements, options) {
   const { inputSelector, submitButtonSelector } = options;
   const inputElements = [...formElements.querySelectorAll(inputSelector)];
-  const saveButton = formElements.querySelector(submitButtonSelector);
   inputElements.forEach((inputElements) => {
     inputElements.addEventListener("input", (event) => {
       checkInputValidity(formElements, inputElements, options);
@@ -44,40 +43,39 @@ function setEventListeners(formElements, options) {
 }
 
 function enableValidation(options) {
-  const formElements = [...document.querySelectorAll(options.formSelector)];
   formElements.forEach((formElements) => {
-    formElements.addEventListener("submit", (event) => {
-      event.preventDefault();
+    formElements.addEventListener("submit", (e) => {
+      e.preventDefault();
     });
     setEventListeners(formElements, options);
   });
 }
 
+function enableButton() {
+  saveButton.classList.add(saveButton, inactiveButtonClass);
+  saveButton.disabled = true;
+}
 function disableButton() {
-  saveButton.classList.remove(inactiveButtonClass);
+  saveButton.classList.remove(saveButton, inactiveButtonClass);
   saveButton.disabled = false;
 }
 
-function enableButton() {
-  saveButton.classList.add(inactiveButtonClass);
-  saveButton.disabled = true;
-}
-
-function toggleButtonState(inputElements, saveButton, { inactiveButtonClass }) {
-  if (hasInvalidInput(inputElements)) {
+function toggleButtonState(formElements, { inactiveButtonClass, saveButton }) {
+  if (hasInvalidInput(formElements)) {
     disableButton();
     return;
   }
   enableButton();
 }
-
 const options = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save",
-  inactiveButtonClass: ".modal__button_disabled",
-  inputErrorClass: ".modal_error",
-  errorClass: ".modal__error_visible",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal_error",
+  errorClass: "modal__error_visible",
 };
+const formElements = [...document.querySelectorAll(options.formSelector)];
+const saveButton = document.querySelectorAll(".modal__save");
 
 enableValidation(options);
