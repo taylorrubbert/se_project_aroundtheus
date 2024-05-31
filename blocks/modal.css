@@ -127,13 +127,11 @@
   color: red;
   width: 358px;
   position: absolute;
+  margin-top: -30px;
+}
+.modal__error:last-of-type {
   margin-top: -45px;
 }
-
-.modal__error_visible {
-  color: red;
-}
-
 .modal__button_disabled {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.2);

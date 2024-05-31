@@ -27,8 +27,8 @@ function checkInputValidity(formElements, inputElements, options) {
   hideInputError(formElements, inputElements, options);
 }
 
-function hasInvalidInput(inputList) {
-  return !inputList.every((inputElements) => inputElements.validity.valid);
+function hasInvalidInput(inputEl) {
+  return !inputEl.validity.valid;
 }
 
 function setEventListeners(formElements, options) {
@@ -54,7 +54,11 @@ function enableValidation(options) {
   });
 }
 
-function toggleButtonState(inputElements, saveButton, { inactiveButtonClass }) {
+function toggleButtonState(
+  inputElements,
+  submitButtonSelector,
+  { inactiveButtonClass }
+) {
   if (hasInvalidInput(inputElements)) {
     disableButton();
     return;
@@ -62,12 +66,12 @@ function toggleButtonState(inputElements, saveButton, { inactiveButtonClass }) {
   enableButton();
 }
 
-function enableButton() {
-  saveButton.classList.remove(inactiveButtonClass);
+function enableButton(options) {
+  saveButton.classList.remove(".modal__button_disabled");
   saveButton.disabled = false;
 }
-function disableButton() {
-  saveButton.classList.add(inactiveButtonClass);
+function disableButton(options) {
+  saveButton.classList.add(".modal__button_disabled");
   saveButton.disabled = true;
 }
 
