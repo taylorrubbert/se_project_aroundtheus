@@ -44,28 +44,41 @@
       <h2 class="footer__copyright">&copy; 2024 Around the U.S.</h2>
     </footer>
 
-    <!--Edit Modal-->
+    <!--Edit Profile Modal-->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button type="button" class="modal__close"></button>
+        <h2 class="modal__title modal__form">Edit Profile</h2>
         <form class="modal__form" id="edit-profile-form">
-          <h2 class="modal__title">Edit Profile</h2>
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            class="modal__input modal__input_type_name"
-            id="profile-title-input"
-            required
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            class="modal__input modal__input_type_description"
-            id="profile-description-input"
-            required
-          />
+          <label class="modal__label">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              class="modal__input modal__input_type_name"
+              id="profile-title-input"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+            <span class="modal__error" id="profile-title-input-error"></span>
+          </label>
+          <label class="modal__label">
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              class="modal__input modal__input_type_description"
+              id="profile-description-input"
+              maxlength="40"
+              minlength="2"
+              required
+            />
+            <span
+              class="modal__error"
+              id="profile-description-input-error"
+            ></span>
+          </label>
           <button type="submit" class="modal__save">Save</button>
         </form>
       </div>
@@ -75,23 +88,41 @@
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
         <button type="button" class="modal__close"></button>
+        <h2 class="modal__title modal__form">New Place</h2>
         <form class="modal__form" id="add-card-form">
-          <h2 class="modal__title">New Place</h2>
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            class="modal__input modal__input_type_title"
-            required
-          />
-          <input
-            type="text"
-            name="url"
-            placeholder="Image URL"
-            class="modal__input modal__input_type_url"
-            required
-          />
-          <button type="submit" class="modal__save">Save</button>
+          <label class="modal__label">
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              class="modal__input modal__input_type_title"
+              id="card-name"
+              maxlength="200"
+              minlength="2"
+              required
+            />
+            <span class="modal__error" id="card-name-error"></span>
+          </label>
+          <label class="modal__label">
+            <input
+              type="text"
+              name="url"
+              placeholder="Image URL"
+              class="modal__input modal__input_type_url"
+              id="card-link"
+              maxlength="200"
+              minlength="2"
+              required
+            />
+            <span class="modal__error" id="card-link-error"></span>
+          </label>
+          <button
+            type="submit"
+            class="modal__save modal__button_disabled modal__error_visible"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -122,5 +153,6 @@
       </li>
     </template>
     <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/validation.js"></script>
   </body>
 </html>

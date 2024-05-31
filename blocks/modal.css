@@ -114,6 +114,21 @@
   margin-block-start: 10px;
 }
 
+.modal__error {
+  font-weight: 400;
+  font-size: 12px;
+  color: red;
+  position: absolute;
+}
+
+.modal__error_visible {
+}
+
+.modal__button_disabled {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (max-width: 880px) {
   .modal__close {
     height: 35px;
