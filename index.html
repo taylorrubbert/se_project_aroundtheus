@@ -50,6 +50,7 @@
         <button type="button" class="modal__close"></button>
         <h2 class="modal__title">Edit Profile</h2>
         <form class="modal__form" id="edit-profile-form">
+          <label class="modal__label">
             <input
               type="text"
               name="name"
@@ -62,6 +63,7 @@
             />
             <span class="modal__error" id="profile-title-input-error"></span>
           </label>
+          <label class="modal__label">
             <input
               type="text"
               name="description"
@@ -77,9 +79,7 @@
               id="profile-description-input-error"
             ></span>
           </label>
-          <button type="submit" class="modal__save">
-            Save
-          </button>
+          <button type="submit" class="modal__save">Save</button>
         </form>
       </div>
     </div>
@@ -90,6 +90,7 @@
         <button type="button" class="modal__close"></button>
         <h2 class="modal__title">New Place</h2>
         <form class="modal__form" id="add-card-form">
+          <label class="modal__label">
             <input
               type="text"
               name="title"
@@ -102,6 +103,7 @@
             />
             <span class="modal__error" id="card-name-error"></span>
           </label>
+          <label class="modal__label">
             <input
               type="text"
               name="url"
@@ -113,13 +115,7 @@
             />
             <span class="modal__error" id="card-link-error"></span>
           </label>
-          <button
-            type="submit"
-            class="modal__save"
-            disabled
-          >
-            Save
-          </button>
+          <button type="submit" class="modal__save">Save</button>
         </form>
       </div>
     </div>
