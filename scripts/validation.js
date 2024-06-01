@@ -27,16 +27,16 @@ function checkInputValidity(formElement, inputElement, options) {
   hideInputError(formElement, inputElement, options);
 }
 
-function hasInvalidInput(inputList) {
-  return !inputList.every((inputElement) => inputElement.validity.valid);
+function hasInvalidInput(inputElement) {
+  return !inputElement.validity.valid;
 }
 
 function setEventListeners(formElement, options) {
   const { inputSelector, submitButtonSelector } = options;
-  const inputElement = [...formElement.querySelectorAll(inputSelector)];
+  const inputElements = [...formElement.querySelectorAll(inputSelector)];
   const saveButton = formElement.querySelector(submitButtonSelector);
 
-  inputElement.forEach((inputElement) => {
+  inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, options);
       toggleButtonState(inputElement, saveButton, options);
@@ -45,8 +45,8 @@ function setEventListeners(formElement, options) {
 }
 
 function enableValidation(options) {
-  const formElement = [...document.querySelectorAll(options.formSelector)];
-  formElement.forEach((formElement) => {
+  const formElements = [...document.querySelectorAll(options.formSelector)];
+  formElements.forEach((formElement) => {
     formElement.addEventListener("submit", (e) => {
       e.preventDefault();
     });
@@ -54,13 +54,17 @@ function enableValidation(options) {
   });
 }
 
-function toggleButtonState(inputElement, saveButton, { inactiveButtonClass }) {
-  if (hasInvalidInput(inputElement)) {
-    saveButton.classList.add(inactiveButtonClass, inputErrorClass, options);
+function toggleButtonState(
+  inputElements,
+  saveButton,
+  { inactiveButtonClass, inputErrorClass }
+) {
+  if (hasInvalidInput(inputElements)) {
+    saveButton.classList.add(inactiveButtonClass);
     saveButton.disabled = true;
     return;
   }
-  saveButton.classList.remove(inactiveButtonClass, inputErrorClass, options);
+  saveButton.classList.remove(inactiveButtonClass);
   saveButton.disabled = false;
 }
 
