@@ -151,9 +151,6 @@ profileEditBtn.addEventListener("click", () => {
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-profileEditBtnClose.addEventListener("click", () =>
-  closeModal(profileEditModal)
-);
 
 //New Card Form
 addCardForm.addEventListener("submit", handleAddCardSubmit);
@@ -167,9 +164,6 @@ addCardBtn.addEventListener("click", () => {
 });
 
 //Preview Image Form
-previewImageCloseBtn.addEventListener("click", () =>
-  closeModal(previewImageModal)
-);
 
 //Close modal
 modals.forEach((modal) => {
