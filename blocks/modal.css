@@ -198,7 +198,8 @@
   }
 
   .modal__container {
-    margin-top: 123px;
+    margin: 123px, 0px, 0px, 0px;
+    padding: 32px;
   }
 
   .modal__container_preview {

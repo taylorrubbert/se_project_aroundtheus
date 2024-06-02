@@ -147,12 +147,10 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileEditBtnClose.addEventListener("click", () =>
   closeModal(profileEditModal)
 );
-profileEditForm.addEventListener("keydown", handleEscClose);
 
 //New Card Form
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 addCardBtn.addEventListener("click", () => openModal(addCardModal));
-addCardBtnClose.addEventListener("click", () => closeModal(addCardModal));
 
 //Preview Image Form
 previewImageCloseBtn.addEventListener("click", () =>
