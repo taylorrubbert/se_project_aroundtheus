@@ -159,6 +159,11 @@ profileEditBtnClose.addEventListener("click", () =>
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 addCardBtn.addEventListener("click", () => {
   openModal(addCardModal);
+  toggleButtonState(
+    [...addCardModal.querySelectorAll(options.inputSelector)],
+    addCardModal.querySelector(options.submitButtonSelector),
+    options
+  );
 });
 
 //Preview Image Form

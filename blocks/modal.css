@@ -10,6 +10,7 @@
   position: fixed;
   visibility: hidden;
   opacity: 0;
+  justify-content: center;
   transition: opacity 0.3s linear, visibility 0s linear 0.3s;
 }
 
@@ -191,7 +192,7 @@
 
   .modal__save {
     height: 46px;
-    width: 100%;
+    max-width: 238px;
   }
   .modal__input {
     margin-bottom: 50px;
@@ -205,8 +206,8 @@
     margin-top: 123px;
     margin-left: 0 auto;
     margin-right: 0 auto;
-    padding: 32px;
-    max-width: 75vw;
+    padding: 22px;
+    max-width: 282px;
     box-sizing: border-box;
   }
 
