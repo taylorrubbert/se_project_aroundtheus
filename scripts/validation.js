@@ -27,8 +27,8 @@ function checkInputValidity(formElement, inputElement, options) {
   hideInputError(formElement, inputElement, options);
 }
 
-function hasInvalidInput(inputElement) {
-  return !inputElement.validity.valid;
+function hasInvalidInput(inputElements) {
+  return inputElements.some((inputElement) => !inputElement.validity.valid);
 }
 
 function setEventListeners(formElement, options) {
@@ -39,7 +39,7 @@ function setEventListeners(formElement, options) {
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, options);
-      toggleButtonState(inputElement, saveButton, options);
+      toggleButtonState(inputElements, saveButton, options);
     });
   });
 }
@@ -54,11 +54,7 @@ function enableValidation(options) {
   });
 }
 
-function toggleButtonState(
-  inputElements,
-  saveButton,
-  { inactiveButtonClass, inputErrorClass }
-) {
+function toggleButtonState(inputElements, saveButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputElements)) {
     saveButton.classList.add(inactiveButtonClass);
     saveButton.disabled = true;

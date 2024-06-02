@@ -119,18 +119,19 @@
   margin-right: auto;
   padding: 0;
   margin-top: 90px;
+  font-family: Inter, Arial, sans-serif;
+  line-height: 1.2;
 }
 .modal__preview-image {
   max-width: 75vw;
   max-height: 75vh;
 }
 .modal__preview-image_title {
-  padding: 0;
-  margin: 0;
-  color: white;
+  text-align: start;
   font-size: 12px;
   font-weight: 400;
-  margin-block-start: 10px;
+  line-height: 1.2;
+  margin-top: 10px;
 }
 
 .modal__error {
@@ -139,12 +140,9 @@
   color: red;
   width: 358px;
   position: absolute;
-  margin-top: -30px;
+  margin-top: -43px;
 }
 
-.modal__error:last-of-type {
-  margin-top: -45px;
-}
 .modal__button_disabled {
   background-color: #fff;
   color: rgba(0, 0, 0, 0.2);
@@ -180,6 +178,12 @@
     bottom: calc(100% + 20px);
     left: calc(100% - 26px);
   }
+  .modal__close_preview {
+    height: 26px;
+    width: 26px;
+    bottom: calc(100% - 25px);
+    left: calc(100% - 25px);
+  }
 
   .modal__title {
     margin: 0 0 75px;
@@ -198,7 +202,9 @@
   }
 
   .modal__container {
-    margin: 123px, 0px, 0px, 0px;
+    margin-top: 123px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
     padding: 32px;
   }
 
