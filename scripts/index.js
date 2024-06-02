@@ -163,8 +163,6 @@ addCardBtn.addEventListener("click", () => {
   );
 });
 
-//Preview Image Form
-
 //Close modal
 modals.forEach((modal) => {
   modal.addEventListener("mousedown", (e) => {
