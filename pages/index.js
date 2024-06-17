@@ -79,6 +79,12 @@ const previewImageElement = previewImageModal.querySelector("#preview-image");
 const previewImageTextElement = previewImageModal.querySelector(
   "#preview-image-title"
 );
+
+//Validation
+const addCardFormValidator = new FormValidator(options, addCardForm);
+addCardFormValidator.enableValidation();
+const formSelector = new FormValidator(options, formSelector);
+
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
@@ -162,11 +168,7 @@ function handleEscClose(event) {
 profileEditBtn.addEventListener("click", () => {
   fillProfileForm();
   openModal(profileEditModal);
-  toggleButtonState(
-    [...profileEditModal.querySelectorAll(options.inputSelector)],
-    profileEditModal.querySelector(options.submitButtonSelector),
-    options
-  );
+  toggleButtonState();
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
@@ -175,11 +177,7 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 addCardBtn.addEventListener("click", () => {
   openModal(addCardModal);
-  toggleButtonState(
-    [...addCardModal.querySelectorAll(options.inputSelector)],
-    addCardModal.querySelector(options.submitButtonSelector),
-    options
-  );
+  addCardFormValidator.toggleButtonState();
 });
 
 //Close modal
