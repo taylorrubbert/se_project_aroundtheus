@@ -58,7 +58,6 @@ const modals = document.querySelectorAll(".modal");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const profileEditBtn = document.querySelector("#profile-edit-btn");
-/*const profileEditBtnClose = profileEditModal.querySelector(".modal__close");*/
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -70,7 +69,6 @@ const profileDescriptionInput = document.querySelector(
 const addCardModal = document.querySelector("#add-card-modal");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const addCardBtn = document.querySelector(".profile__add-button");
-/*const addCardBtnClose = addCardModal.querySelector(".modal__close");*/
 const cardTitleInput = addCardForm.querySelector(".modal__input_type_title");
 const cardUrlInput = addCardForm.querySelector(".modal__input_type_url");
 const cardSelector = document.querySelector("#card-template");
@@ -81,7 +79,6 @@ const previewImageElement = previewImageModal.querySelector("#preview-image");
 const previewImageTextElement = previewImageModal.querySelector(
   "#preview-image-title"
 );
-/*const previewImageCloseBtn = previewImageModal.querySelector(".modal__close");*/
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
