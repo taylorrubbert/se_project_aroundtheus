@@ -1,15 +1,6 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 
-const options = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__save",
-  inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: "modal__input-error",
-  errorClass: "modal__error",
-};
-
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -79,11 +70,6 @@ const previewImageElement = previewImageModal.querySelector("#preview-image");
 const previewImageTextElement = previewImageModal.querySelector(
   "#preview-image-title"
 );
-
-//Validation
-const addCardFormValidator = new FormValidator(options, addCardForm);
-addCardFormValidator.enableValidation();
-const formSelector = new FormValidator(options, formSelector);
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -188,5 +174,18 @@ modals.forEach((modal) => {
     }
   });
 });
+
+const options = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__save",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input-error",
+  errorClass: "modal__error",
+};
+
+//Validation
+const addCardFormValidator = new FormValidator(options, addCardForm);
+addCardFormValidator.enableValidation();
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
