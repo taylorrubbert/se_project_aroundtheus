@@ -177,6 +177,7 @@ modals.forEach((modal) => {
       closeModal(modal);
     }
   });
+  //addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
 });
 
 const options = {
