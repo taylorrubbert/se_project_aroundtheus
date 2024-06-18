@@ -154,6 +154,10 @@ function handleEscClose(event) {
 profileEditBtn.addEventListener("click", () => {
   fillProfileForm();
   openModal(profileEditModal);
+  profileEditFormValidator.resetValidation([
+    profileTitleInput,
+    profileDescriptionInput,
+  ]);
   toggleButtonState();
 });
 
@@ -186,6 +190,8 @@ const options = {
 
 //Validation
 const addCardFormValidator = new FormValidator(options, addCardForm);
+const profileEditFormValidator = new FormValidator(options, profileEditForm);
 addCardFormValidator.enableValidation();
+profileEditFormValidator.enableValidation(options);
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
