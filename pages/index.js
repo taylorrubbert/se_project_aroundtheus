@@ -136,6 +136,7 @@ function handleAddCardSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
+  addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
   renderCard({ name, link }, cardListElement);
   closeModal(addCardModal);
   e.target.reset();
@@ -158,7 +159,7 @@ profileEditBtn.addEventListener("click", () => {
     profileTitleInput,
     profileDescriptionInput,
   ]);
-  toggleButtonState();
+  profileEditFormValidator.toggleButtonState();
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
@@ -177,7 +178,6 @@ modals.forEach((modal) => {
       closeModal(modal);
     }
   });
-  //addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
 });
 
 const options = {
