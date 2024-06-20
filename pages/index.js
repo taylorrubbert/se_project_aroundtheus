@@ -33,9 +33,6 @@ const cardData = {
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
 };
 
-const card = new Card(cardData, "#card-template");
-card.getView();
-
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
 /* -------------------------------------------------------------------------- */
@@ -90,16 +87,14 @@ function fillProfileForm() {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = getCardElement(cardData);
+  const cardElement = new Card(cardData, "#card-template");
   wrapper.prepend(cardElement);
 }
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
-  const cardImageElement = cardElement.querySelector("#card-image");
-  const cardTitleElement = cardElement.querySelector("#card-title");
   const likeButton = cardElement.querySelector("#like-button");
-  const deleteButton = cardElement.querySelector("#delete-button");
+  const deleteButton = cardElement.querySelector;
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -108,10 +103,6 @@ function getCardElement(cardData) {
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
-
-  cardImageElement.src = cardData.link;
-  cardImageElement.alt = cardData.name;
-  cardTitleElement.textContent = cardData.name;
 
   cardImageElement.addEventListener("click", () => {
     previewImageElement.src = cardData.link;
@@ -136,7 +127,7 @@ function handleAddCardSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
+  //addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
   renderCard({ name, link }, cardListElement);
   closeModal(addCardModal);
   e.target.reset();
