@@ -155,10 +155,10 @@ function handleEscClose(event) {
 profileEditBtn.addEventListener("click", () => {
   fillProfileForm();
   openModal(profileEditModal);
-  profileEditFormValidator.resetValidation([
+  /*profileEditFormValidator.resetValidation([
     profileTitleInput,
     profileDescriptionInput,
-  ]);
+  ]);*/
   profileEditFormValidator.toggleButtonState();
 });
 
