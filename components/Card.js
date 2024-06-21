@@ -4,6 +4,7 @@ export default class Card {
     this._link = link;
     this._cardSelector = cardSelector;
     this._handleImageClick = handleImageClick;
+    this._previewImageElement = null;
   }
 
   _setEventListeners() {
@@ -42,9 +43,7 @@ export default class Card {
   }
 
   _handleImageClick() {
-    this._cardImageElement
-      .querySelector("#preview-image")
-      .classList.add("modal_opened");
+    this._previewImageElement.classList.add("modal_opened");
   }
 
   getView() {
