@@ -148,6 +148,7 @@
   background-color: #fff;
   color: rgba(0, 0, 0, 0.2);
   border-color: rgba(0, 0, 0, 0.2);
+  cursor: default;
 }
 
 .modal__button_disabled:hover {

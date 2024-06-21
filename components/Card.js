@@ -7,11 +7,10 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._likeButton = this._cardElement
-      .querySelector("#like-button")
-      .addEventListener("click", () => {
-        this._handleLikeIcon();
-      });
+    this._likeButton = this._cardElement.querySelector("#like-button");
+    this._likeButton.addEventListener("click", () => {
+      this._handleLikeIcon();
+    });
 
     this._deleteButton = this._cardElement
       .querySelector("#delete-button")
@@ -22,10 +21,7 @@ export default class Card {
     this._cardImageElement = this._cardElement
       .querySelector("#card-image")
       .addEventListener("click", () => {
-        this._handleImageClick({
-          name: this._name,
-          link: this._link,
-        });
+        this.handleImageClick();
       });
   }
 
@@ -38,6 +34,12 @@ export default class Card {
     this._cardElement
       .querySelector(".card__like-button")
       .classList.toggle("card__like-button_active");
+  }
+
+  _handleImageClick() {
+    this._cardImageElement
+      .querySelector("#preview-image")
+      .classList.add("modal_opened");
   }
 
   getView() {
