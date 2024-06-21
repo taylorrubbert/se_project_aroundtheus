@@ -21,13 +21,12 @@ export default class Card {
     this._cardImageElement = this._cardElement.querySelector("#card-image");
     this._cardImageElement.addEventListener("click", () => {
       this._handleImageClick(this);
-      /*Do I add this info here?
-      this._previewImageElement =
-        this._cardElement.querySelector("#preview-image");
-      this._previewImageTextElement = this._cardElement.querySelector(
-        "#preview-image-title"
-      );*/
-      openModal(previewImageModal);
+      this._cardImageElement.src = this._link;
+      this._cardImageElement.alt = this._name;
+      this._cardTitleElement.textContent = this._name;
+      previewImageElement.src = this._link;
+      previewImageElement.alt = this._name;
+      previewImageTextElement.textContent = this._name;
     });
   }
 
@@ -40,10 +39,17 @@ export default class Card {
     this._likeButton.classList.toggle("card__like-button_active");
   }
 
-  _handleImageClick() {
-    this._cardImageElement
-      .querySelector("#preview-image")
-      .classList.add("modal_opened");
+  _handleImageClick(previewImageElement) {
+    this._cardImageElement.src = this._link;
+    this._cardImageElement.alt = this._name;
+    this._cardTitleElement.textContent = this._name;
+
+    this._cardImageElement.addEventListener("click", () => {
+      previewImageElement.src = this._link;
+      previewImageElement.alt = this._name;
+      previewImageTextElement.textContent = this._name;
+    });
+    openModal(previewImageModal);
   }
 
   getView() {

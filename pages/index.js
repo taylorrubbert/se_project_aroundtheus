@@ -87,7 +87,11 @@ function fillProfileForm() {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = new Card(cardData, "#card-template").getView();
+  const cardElement = new Card(
+    cardData,
+    "#card-template",
+    handleImageClick
+  ).getView();
   wrapper.prepend(cardElement);
 }
 
@@ -117,9 +121,14 @@ function handleEscClose(e) {
 }
 
 function handleImageClick(cardData) {
-  previewImageElement.src = cardData.link;
-  previewImageElement.alt = cardData.name;
-  previewImageTextElement.textContent = cardData.name;
+  this._cardImageElement.src = cardData.link;
+  this._cardImageElement.alt = cardData.name;
+  this._cardTitleElement.textContent = cardData.name;
+  this._cardImageElement.addEventListener("click", () => {
+    this._previewImageElement.src = cardData.link;
+    this._previewImageElement.alt = cardData.name;
+    this._previewImageTextElement.textContent = cardData.name;
+  });
   openModal(previewImageModal);
 }
 
