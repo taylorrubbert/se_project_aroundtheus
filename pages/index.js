@@ -110,10 +110,17 @@ function handleAddCardSubmit(e) {
   e.target.reset();
 }
 
-function handleEscClose(event) {
-  if (event.key === "Escape") {
+function handleEscClose(e) {
+  if (e.key === "Escape") {
     document.querySelectorAll(".modal.modal_opened").forEach(closeModal);
   }
+}
+
+function handleImageClick(cardData) {
+  previewImageElement.src = cardData.link;
+  previewImageElement.alt = cardData.name;
+  previewImageTextElement.textContent = cardData.name;
+  openModal(previewImageModal);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -146,6 +153,11 @@ modals.forEach((modal) => {
       closeModal(modal);
     }
   });
+});
+
+//Preview Image
+previewImageModal.addEventListener("click", () => {
+  handleImageClick();
 });
 
 const options = {

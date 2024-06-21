@@ -20,7 +20,14 @@ export default class Card {
 
     this._cardImageElement = this._cardElement.querySelector("#card-image");
     this._cardImageElement.addEventListener("click", () => {
-      this._handleImageClick();
+      this._handleImageClick(this);
+      /*Do I add this info here?
+      this._previewImageElement =
+        this._cardElement.querySelector("#preview-image");
+      this._previewImageTextElement = this._cardElement.querySelector(
+        "#preview-image-title"
+      );*/
+      openModal(previewImageModal);
     });
   }
 
