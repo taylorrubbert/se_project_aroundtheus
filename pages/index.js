@@ -28,10 +28,10 @@ const initialCards = [
   },
 ];
 
-/*const cardData = {
+const cardData = {
   name: "Yosemite Valley",
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-};*/
+};
 
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
@@ -87,7 +87,7 @@ function fillProfileForm() {
 }
 
 function renderCard(cardData, wrapper) {
-  const cardElement = new Card(cardData, "#card-template");
+  const cardElement = new Card(cardData, "#card-template").getView();
   wrapper.prepend(cardElement);
 }
 
