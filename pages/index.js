@@ -28,10 +28,10 @@ const initialCards = [
   },
 ];
 
-const cardData = {
+/*const cardData = {
   name: "Yosemite Valley",
   link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-};
+};*/
 
 /* -------------------------------------------------------------------------- */
 /*                                  Elements                                  */
@@ -94,7 +94,8 @@ function renderCard(cardData, wrapper) {
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const likeButton = cardElement.querySelector("#like-button");
-  const deleteButton = cardElement.querySelector;
+  const deleteButton = cardElement.querySelector("#delete-button");
+  const cardImageElement = cardElement.querySelector("#card-image");
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -110,6 +111,7 @@ function getCardElement(cardData) {
     previewImageTextElement.textContent = cardData.name;
     openModal(previewImageModal);
   });
+
   return cardElement;
 }
 
@@ -127,9 +129,9 @@ function handleAddCardSubmit(e) {
   e.preventDefault();
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
-  //addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
   renderCard({ name, link }, cardListElement);
   closeModal(addCardModal);
+  addCardFormValidator.resetValidation([cardTitleInput, cardUrlInput]);
   e.target.reset();
 }
 
@@ -182,8 +184,9 @@ const options = {
 
 //Validation
 const addCardFormValidator = new FormValidator(options, addCardForm);
-const profileEditFormValidator = new FormValidator(options, profileEditForm);
 addCardFormValidator.enableValidation();
+
+const profileEditFormValidator = new FormValidator(options, profileEditForm);
 profileEditFormValidator.enableValidation();
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListElement));
