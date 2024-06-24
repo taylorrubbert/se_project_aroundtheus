@@ -135,11 +135,6 @@ function handleImageClick(card) {
 profileEditBtn.addEventListener("click", () => {
   fillProfileForm();
   openModal(profileEditModal);
-  profileEditFormValidator.resetValidation([
-    profileTitleInput,
-    profileDescriptionInput,
-  ]);
-  profileEditFormValidator.toggleButtonState();
 });
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
