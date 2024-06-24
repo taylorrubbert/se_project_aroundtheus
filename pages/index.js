@@ -120,15 +120,11 @@ function handleEscClose(e) {
   }
 }
 
-function handleImageClick(cardData) {
-  this._cardImageElement.src = cardData.link;
-  this._cardImageElement.alt = cardData.name;
-  this._cardTitleElement.textContent = cardData.name;
-  this._cardImageElement.addEventListener("click", () => {
-    this._previewImageElement.src = cardData.link;
-    this._previewImageElement.alt = cardData.name;
-    this._previewImageTextElement.textContent = cardData.name;
-  });
+function handleImageClick(card) {
+  previewImageElement.src = card.link;
+  previewImageElement.alt = card.name;
+  previewImageTextElement.textContent = card.name;
+
   openModal(previewImageModal);
 }
 
@@ -162,11 +158,6 @@ modals.forEach((modal) => {
       closeModal(modal);
     }
   });
-});
-
-//Preview Image
-previewImageModal.addEventListener("click", () => {
-  handleImageClick();
 });
 
 const options = {
