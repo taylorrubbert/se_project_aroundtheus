@@ -76,16 +76,6 @@ const previewImageTextElement = previewImageModal.querySelector(
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
 /* -------------------------------------------------------------------------- */
-/*function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", handleEscClose);
-}
-
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", handleEscClose);
-}*/
-
 function fillProfileForm() {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -119,12 +109,6 @@ function handleAddCardSubmit(e) {
   e.target.reset();
 }
 
-/*function handleEscClose(e) {
-  if (e.key === "Escape") {
-    document.querySelectorAll(".modal.modal_opened").forEach(closeModal);
-  }
-}*/
-
 function handleImageClick(card) {
   previewImageElement.src = card.link;
   previewImageElement.alt = card.name;
@@ -151,15 +135,6 @@ addCardBtn.addEventListener("click", () => {
   addCardFormValidator.toggleButtonState();
 });
 
-//Close modal
-/*modals.forEach((modal) => {
-  modal.addEventListener("mousedown", (e) => {
-    if (e.target === modal || e.target.classList.contains("modal__close")) {
-      closeModal(modal);
-    }
-  });
-});*/
-
 const options = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
@@ -175,3 +150,26 @@ addCardFormValidator.enableValidation();
 
 const profileEditFormValidator = new FormValidator(options, profileEditForm);
 profileEditFormValidator.enableValidation();
+
+const newCardPopup = new PopupWithForm("#add-card-form", () => {});
+newCardPopup.open();
+newCardPopup.close();
+
+const editUserPopup = new PopupWithForm("#profile-edit-modal");
+editUserPopup.open();
+editUserPopup.close();
+
+const previewImagePopup = new PopupWithImage("#preview-modal");
+previewImagePopup.open();
+previewImagePopup.close();
+
+const section = new Section(
+  { items: initialCards, renderer: addCard },
+  ".card__list"
+);
+section.renderItems();
+
+const userInfo = new UserInfo({
+  titleSelector: ".profile__title",
+  descriptionSelector: ".profile__description",
+});

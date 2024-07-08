@@ -7,14 +7,29 @@ export default class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
   }
 
+  _getInputValues() {
+    this._inputList = this._popupElement.querySelectorAll(".modal__input");
+
+    this._formValues = {};
+    this._inputList.forEach((input) => {
+      this._formValues[input.name] = input.value;
+    });
+
+    return this._formValues;
+  }
+
   close() {
-    this._popupForm.reset();
     super.close();
   }
+
+  setEventListeners() {
+    super.setEventListeners();
+
+    this._popupForm.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+      const formValues = this._getInputValues();
+      this._handleFormSubmit(formValues);
+      this.close();
+    });
+  }
 }
-
-// move this to index.js?
-/*const newCardPopup = new PopupWithForm("#add-card-form", () => {});
-newCardPopup.open();
-
-newCardPopup.close();*/
