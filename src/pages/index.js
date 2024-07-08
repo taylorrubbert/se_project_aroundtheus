@@ -175,10 +175,3 @@ addCardFormValidator.enableValidation();
 
 const profileEditFormValidator = new FormValidator(options, profileEditForm);
 profileEditFormValidator.enableValidation();
-
-const newCardPopup = new PopupWithForm("#add-card-form", () => {});
-newCardPopup.open();
-
-newCardPopup.close();
-
-initialCards.forEach((cardData) => renderCard(cardData, cardListElement));

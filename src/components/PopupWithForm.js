@@ -7,8 +7,14 @@ export default class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
   }
 
-  /*close() {
+  close() {
     this._popupForm.reset();
     super.close();
-  }*/
+  }
 }
+
+// move this to index.js?
+/*const newCardPopup = new PopupWithForm("#add-card-form", () => {});
+newCardPopup.open();
+
+newCardPopup.close();*/
