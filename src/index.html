@@ -6,7 +6,6 @@
     <meta name="keywords" content="US, travel, Jacques Cousteau" />
     <meta name="author" content="Taylor Rubbert" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pages/index.css" />
     <title>Around the U.S.</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
   </head>
@@ -14,7 +13,7 @@
     <header class="header page__section">
       <img
         class="header__logo"
-        src="./images/header-vector.svg"
+        src="<%=require('./images/header-vector.svg')%>"
         alt="Around the U.S."
       />
     </header>
@@ -22,7 +21,7 @@
       <section class="profile page__section">
         <img
           class="profile__image"
-          src="./images/Avatar.png"
+          src="<%=require('./images/Avatar.png')%>"
           alt="Jacques Cousteau"
         />
         <div class="profile__info">
@@ -147,6 +146,5 @@
         </div>
       </li>
     </template>
-    <script src="./pages/index.js" type="module" defer></script>
   </body>
 </html>
