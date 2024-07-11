@@ -4,7 +4,7 @@ import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-import Section from "../components/Section.js";
+import Section from "../utils/Section.js";
 import UserInfo from "../components/UserInfo.js";
 
 /*const cardData = {
@@ -61,7 +61,7 @@ const editProfilePopup = new PopupWithForm(
 editProfilePopup.setEventListeners();
 
 //Add New Card Popup
-const newCardPopup = new PopupWithForm("#add-card-form", handleAddCardSubmit);
+const newCardPopup = new PopupWithForm("#add-card-modal", handleAddCardSubmit);
 newCardPopup.setEventListeners();
 
 //Preview Image Popup
@@ -70,11 +70,15 @@ previewImagePopup.setEventListeners();
 
 //Section
 const section = new Section(
-  { item: initialCards, renderer: renderCard },
-  ".card__list"
+  {
+    item: initialCards,
+    renderer: (item) => {
+      renderCard(item, cardListElement);
+    },
+  },
+  cardListElement
 );
 section.renderItems();
-
 //UserInfo
 const user = new UserInfo({
   name: ".profile__title",
