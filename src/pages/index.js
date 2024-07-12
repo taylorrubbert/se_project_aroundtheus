@@ -73,7 +73,6 @@ function handleProfileEditSubmit(profileData) {
   const name = profileData.name;
   const description = profileData.description;
   user.setUserInfo({ name, description });
-  const updatedProfile = user.getUserInfo();
   editProfilePopup.close();
 }
 
@@ -83,7 +82,7 @@ function handleAddCardSubmit(newCardData, cardListElement) {
   const link = newCardData.url;
   renderCard({ name, alt, link }, cardListElement);
   newCardPopup.close();
-  addCardFormValidator.resetValidation();
+  addCardFormValidator.resetForm();
 }
 
 function renderCard(cardData) {
@@ -100,16 +99,16 @@ function renderCard(cardData) {
 /* -------------------------------------------------------------------------- */
 //Edit Profile Form
 profileEditBtn.addEventListener("click", () => {
-  const UserInfo = user.getUserInfo();
-  profileTitleInput.value = UserInfo.name;
-  profileDescriptionInput.value = UserInfo.description;
+  const userInput = user.getUserInfo();
+  profileTitleInput.value = userInput.name;
+  profileDescriptionInput.value = userInput.description;
   editProfilePopup.open();
 });
 
 //New Card Form
 addCardBtn.addEventListener("click", () => {
   newCardPopup.open();
-  addCardFormValidator._disableSubmitButton();
+  addCardFormValidator.toggleButtonState();
 });
 
 /* -------------------------------------------------------------------------- */
