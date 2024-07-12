@@ -34,10 +34,6 @@ export default class Card {
     this._likeButton.classList.toggle("card__like-button_active");
   }
 
-  _handleImageClick() {
-    this._previewImageElement.classList.add("modal_opened");
-  }
-
   getView() {
     this._cardElement = document
       .querySelector("#card-template")
@@ -46,7 +42,6 @@ export default class Card {
 
     this._setEventListeners();
 
-    this._cardImageElement = this._cardElement.querySelector("#card-image");
     this._cardTitleElement = this._cardElement.querySelector("#card-title");
     this._cardImageElement.src = this.link;
     this._cardImageElement.alt = this.name;

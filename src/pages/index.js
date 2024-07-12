@@ -50,12 +50,13 @@ const section = new Section(
   {
     item: initialCards,
     renderer: (item) => {
-      renderCard(item, cardListElement);
+      section.addItem(createCard(item));
     },
   },
   cardListElement
 );
 section.renderItems();
+
 //UserInfo
 const user = new UserInfo({
   name: ".profile__title",
@@ -80,19 +81,13 @@ function handleAddCardSubmit(newCardData, cardListElement) {
   const name = newCardData.title;
   const alt = newCardData.title;
   const link = newCardData.url;
-  renderCard({ name, alt, link }, cardListElement);
+  createCard({ name, alt, link }, cardListElement);
   newCardPopup.close();
   addCardFormValidator.resetForm();
 }
 
-function renderCard(cardData) {
-  const cardElement = new Card(
-    cardData,
-    "#card-template",
-    handleImageClick
-  ).getView();
-
-  cardListElement.prepend(cardElement);
+function createCard(cardData) {
+  return new Card(cardData, "#card-template", handleImageClick).getView();
 }
 /* -------------------------------------------------------------------------- */
 /*                               Event Listeners                              */
