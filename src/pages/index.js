@@ -70,7 +70,7 @@ function handleImageClick(name, link) {
 }
 
 function handleProfileEditSubmit(profileData) {
-  const name = profileData.title;
+  const name = profileData.name;
   const description = profileData.description;
   user.setUserInfo({ name, description });
   const updatedProfile = user.getUserInfo();
@@ -83,7 +83,7 @@ function handleAddCardSubmit(newCardData, cardListElement) {
   const link = newCardData.url;
   renderCard({ name, alt, link }, cardListElement);
   newCardPopup.close();
-  addCardFormValidator.resetForm();
+  addCardFormValidator.resetValidation();
 }
 
 function renderCard(cardData) {
