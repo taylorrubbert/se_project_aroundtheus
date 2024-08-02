@@ -53,10 +53,10 @@ const editProfilePopup = new PopupWithForm(
 editProfilePopup.setEventListeners();
 
 //Edit Avatar Popup
-const editAvatarPopup = new PopupWithForm({
-  popupSelector: "#edit-avatar-modal",
-  handleFormSubmit: handleNewAvatarSubmit,
-});
+const editAvatarPopup = new PopupWithForm(
+  "#edit-avatar-modal",
+  handleNewAvatarSubmit
+);
 editAvatarPopup.setEventListeners();
 let userId;
 
