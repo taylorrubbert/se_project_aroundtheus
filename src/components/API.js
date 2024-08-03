@@ -12,9 +12,9 @@ export default class Api {
     }
   }
 
-  // _request(url, options) {
-  //   return fetch(url, options).then(this._handleResponse);
-  // }
+  _request(url, options) {
+    return fetch(url, options).then(this._handleResponse);
+  }
 
   getUserInfo() {
     return fetch(`${this._baseUrl}/users/me`, {

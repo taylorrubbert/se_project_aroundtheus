@@ -54,7 +54,7 @@ editProfilePopup.setEventListeners();
 
 //Edit Avatar Popup
 const editAvatarPopup = new PopupWithForm(
-  "#edit-avatar-modal",
+  "#avatar-edit-modal",
   handleNewAvatarSubmit
 );
 editAvatarPopup.setEventListeners();
@@ -93,7 +93,7 @@ api
       title: userData.name,
       description: userData.about,
     });
-    userInfo.setUserAvatar({ avatar: userData.avatar });
+    userInfo.setAvatar({ avatar: userData.avatar });
     userId = userData._id;
 
     cardSection = new Section(
@@ -113,7 +113,7 @@ const userInfo = new UserInfo({
 });
 
 //Create Card
-const createCard = (data) => {
+function createCard(data) {
   const card = new Card(
     data,
     "#card-template",
@@ -122,7 +122,7 @@ const createCard = (data) => {
     handleLikeCard
   );
   return card.getView();
-};
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                  Functions                                 */
@@ -162,7 +162,7 @@ function handleAddCardSubmit(inputValues) {
     })
     .catch(console.error)
     .finally(() => {
-      addCardPopup.renderLoading(false);
+      addCard.renderLoading(false);
     });
 }
 
@@ -221,7 +221,7 @@ function handleLikeCard(cardId, cardElement) {
 /* -------------------------------------------------------------------------- */
 //Edit Profile Form
 profileEditBtn.addEventListener("click", () => {
-  const userInput = user.getUserInfo();
+  const userInput = userInfo.getUserInfo();
   profileTitleInput.value = userInput.name;
   profileDescriptionInput.value = userInput.description;
   editProfilePopup.open();
