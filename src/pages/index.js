@@ -75,16 +75,6 @@ const previewImagePopup = new PopupWithImage("#preview-modal");
 previewImagePopup.setEventListeners();
 
 //Section
-const section = new Section(
-  {
-    item: initialCards,
-    renderer: (item) => {
-      section.addItem(createCard(item));
-    },
-  },
-  cardListElement
-);
-section.renderItems();
 let cardSection;
 api
   .getAppData()
@@ -97,10 +87,14 @@ api
     userId = userData._id;
 
     cardSection = new Section(
-      { items: initialCards, renderer: createCard },
-      ".card__list"
+      {
+        items: initialCards,
+        renderer: (item) => {
+          cardSection.addItem(createCard(item));
+        },
+      },
+      cardListElement
     );
-
     cardSection.renderItems();
   })
   .catch(console.error);
@@ -109,7 +103,7 @@ api
 const userInfo = new UserInfo({
   name: ".profile__title",
   description: ".profile__description",
-  image: ".profile__image",
+  avatar: ".profile__image",
 });
 
 //Create Card
@@ -136,9 +130,9 @@ function handleProfileEditSubmit(profileData) {
   api
     .updateProfileInfo(profileData)
     .then(() => {
-      user.setUserInfo({ name, description });
+      userInfo.setUserInfo({ name, subtitle });
       const name = profileData.name;
-      const description = profileData.description;
+      const subtitle = profileData.description;
       editProfilePopup.close();
     })
     .catch((err) => {
@@ -155,14 +149,14 @@ function handleAddCardSubmit(inputValues) {
   api
     .addCard({ name: inputValues.title, link: inputValues.url })
     .then((newCardData) => {
-      cardSection.addItem(newCardData);
+      cardSection.addItem(createCard(newCardData));
       addCardForm.reset();
       newCardPopup.close();
       addCardFormValidator.resetForm();
     })
     .catch(console.error)
     .finally(() => {
-      addCard.renderLoading(false);
+      newCardPopup.renderLoading(true);
     });
 }
 
@@ -187,7 +181,7 @@ function handleDeleteCard(cardId, card) {
     api
       .deleteCard(cardId)
       .then(() => {
-        card.handleDeleteCard();
+        handleDeleteCard();
         deleteCardPopup.close();
       })
       .catch(console.error)
