@@ -58,7 +58,7 @@ const editAvatarPopup = new PopupWithForm(
   handleNewAvatarSubmit
 );
 editAvatarPopup.setEventListeners();
-//let userId;
+let userId;
 
 //Add New Card Popup
 const newCardPopup = new PopupWithForm("#add-card-modal", handleAddCardSubmit);
@@ -83,7 +83,7 @@ api
       name: userData.name,
       description: userData.about,
     });
-    userInfo.setAvatar({ avatar: userData.avatar });
+    userInfo.setUserAvatar({ avatar: userData.avatar });
     userId = userData._id;
 
     cardSection = new Section(
