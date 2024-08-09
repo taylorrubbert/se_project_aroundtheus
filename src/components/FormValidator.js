@@ -23,8 +23,8 @@ export default class FormValidator {
       `#${inputElement.id}-error`
     );
     inputElement.classList.remove(this._inputErrorClass);
-    this._errorMessage.textContent = inputElement.validationMessage;
-    this._errorMessage.classList.remove(this._errorClass);
+    this._errorMessage.textContent = "";
+    this._errorMessage.classList.add(this._errorClass);
   }
 
   _checkInputValidity(inputElement) {
