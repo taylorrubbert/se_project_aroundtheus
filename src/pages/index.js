@@ -182,7 +182,7 @@ function handleDeleteCard(cardId, card) {
       .deleteCard(cardId)
       .then(() => {
         handleDeleteCard();
-        card._handleDeleteCard();
+        card.handleDeleteCard();
         deleteCardPopup.close();
       })
       .catch(console.error)
