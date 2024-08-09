@@ -28,13 +28,13 @@ export default class Api {
     }).then(this._handleResponse);
   }
 
-  updateProfileInfo({ name, subtitle }) {
+  updateProfileInfo({ name, description }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
         name,
-        about: subtitle,
+        about: description,
       }),
     }).then(this._handleResponse);
   }

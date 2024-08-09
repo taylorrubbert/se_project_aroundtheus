@@ -65,6 +65,26 @@
   transition: ease-in 0.1ms;
 }
 
+.profile__avatar-edit-button {
+  background: transparent url(../images/edit-profile.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  border-style: none;
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  margin-left: 45px;
+  margin-top: -15px;
+  cursor: pointer;
+  transition: 0.2s linear;
+  transform: translate(0, 7px);
+  opacity: 0;
+}
+
+.profile__avatar-edit-button:hover {
+  opacity: 1;
+}
+
 .profile__edit-button:hover {
   opacity: 60%;
 }
@@ -134,6 +154,11 @@
     margin: 36px 0 0 0;
     padding: 0;
   }
+
+  .profile__avatar-edit-button {
+    margin-bottom: 180px;
+    margin-right: 50px;
+  }
 }
 
 @media screen and (max-width: 620px) {
@@ -153,5 +178,10 @@
 
   .profile__add-button {
     width: 282px;
+  }
+
+  .profile__avatar-edit-button {
+    margin-bottom: 160px;
+    margin-right: 50px;
   }
 }

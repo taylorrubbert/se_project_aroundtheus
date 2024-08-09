@@ -26,7 +26,7 @@ const profileDescriptionInput = document.querySelector(
 
 //Edit Avatar
 const editAvatarForm = document.querySelector("#edit-avatar-form");
-const editAvatarButton = document.querySelector(".avatar__edit-button");
+const editAvatarButton = document.querySelector(".profile__avatar-edit-button");
 
 //Add New Card
 const addCardModal = document.querySelector("#add-card-modal");
@@ -58,7 +58,7 @@ const editAvatarPopup = new PopupWithForm(
   handleNewAvatarSubmit
 );
 editAvatarPopup.setEventListeners();
-let userId;
+//let userId;
 
 //Add New Card Popup
 const newCardPopup = new PopupWithForm("#add-card-modal", handleAddCardSubmit);
@@ -80,7 +80,7 @@ api
   .getAppData()
   .then(([userData, initialCards]) => {
     userInfo.setUserInfo({
-      title: userData.name,
+      name: userData.name,
       description: userData.about,
     });
     userInfo.setAvatar({ avatar: userData.avatar });
@@ -130,9 +130,9 @@ function handleProfileEditSubmit(profileData) {
   api
     .updateProfileInfo(profileData)
     .then(() => {
-      userInfo.setUserInfo({ name, subtitle });
       const name = profileData.name;
-      const subtitle = profileData.description;
+      const description = profileData.description;
+      userInfo.setUserInfo({ name, description });
       editProfilePopup.close();
     })
     .catch((err) => {
@@ -156,7 +156,7 @@ function handleAddCardSubmit(inputValues) {
     })
     .catch(console.error)
     .finally(() => {
-      newCardPopup.renderLoading(true);
+      newCardPopup.renderLoading(false);
     });
 }
 
@@ -182,6 +182,7 @@ function handleDeleteCard(cardId, card) {
       .deleteCard(cardId)
       .then(() => {
         handleDeleteCard();
+        card._handleDeleteCard();
         deleteCardPopup.close();
       })
       .catch(console.error)
@@ -224,7 +225,7 @@ profileEditBtn.addEventListener("click", () => {
 //Edit Avatar Form
 editAvatarButton.addEventListener("click", () => {
   editAvatarPopup.open();
-  editAvatarFormValidator.resetValidation();
+  editAvatarFormValidator.resetForm();
 });
 
 //New Card Form
