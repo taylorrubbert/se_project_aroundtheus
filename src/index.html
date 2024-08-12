@@ -24,6 +24,7 @@
           src="<%=require('./images/Avatar.png')%>"
           alt="Jacques Cousteau"
         />
+        <div class="profile__avatar-edit-button" type="button"></div>
         <div class="profile__info">
           <h1 class="profile__title">Jacques Cousteau</h1>
           <button
@@ -83,6 +84,28 @@
       </div>
     </div>
 
+    <!--Edit Avatar Modal-->
+    <div class="modal" id="avatar-edit-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close"></button>
+        <h2 class="modal__title">Change profile picture</h2>
+        <form class="modal__form" id="edit-avatar-form">
+          <label class="modal__label">
+            <input
+              type="url"
+              name="url"
+              placeholder="Image link"
+              class="modal__input modal__input_type_url"
+              id="edit-avatar-input"
+              required
+            />
+            <span class="modal__error" id="edit-avatar-input-error"></span>
+          </label>
+          <button type="submit" class="modal__save">Save</button>
+        </form>
+      </div>
+    </div>
+
     <!--Add Card Modal-->
     <div class="modal" id="add-card-modal">
       <div class="modal__container">
@@ -117,6 +140,18 @@
         </form>
       </div>
     </div>
+
+    <!--Delete Card Modal-->
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container">
+        <button type="button" class="modal__close"></button>
+        <h2 class="modal__title">Are you sure?</h2>
+        <form class="modal__form" id="delete-card-form">
+          <button type="submit" class="modal__save">Yes</button>
+        </form>
+      </div>
+    </div>
+
     <!--Preview Modal-->
     <div class="modal" id="preview-modal">
       <div class="modal__container modal__container_preview">
