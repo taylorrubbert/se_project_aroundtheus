@@ -13,10 +13,7 @@ This is the third project of the Software Engineering program at TripleTen. It w
 - Media queries
 - responsive web page
 - JavaScript form validation
-
-## Plans on improving the project
-
-Expand on project while progressing through the program, refactor JavaScript and improve functionality
+- API implementation
 
 ### Deployment
 
